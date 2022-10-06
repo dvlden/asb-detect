@@ -4,15 +4,15 @@
 
 ## Installation (pick one)
 
-- `npm i asb-detect`
-- `pnpm i asb-detect`
-- `yarn add asb-detect`
+- `npm i @dvlden/asb-detect`
+- `pnpm i @dvlden/asb-detect`
+- `yarn add @dvlden/asb-detect`
 
 
 ## Usage
 
 ```typescript
-import { asb } from 'asb-detect'
+import { asb } from '@dvlden/asb-detect'
 
 asb.detect()
 ```

@@ -3,18 +3,17 @@
   "description": "Simple Android stock-browser detection.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "version": "1.0.1",
+  "typings": "dist/index.d.ts",
+  "version": "1.0.2",
   "packageManager": "pnpm@7.11.0",
   "files": [
     "dist"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./dist && rollup -c --environment BUILD:production",
-    "test": "jest",
-    "prepare": "pnpm run build",
-    "prepublishOnly": "pnpm run test"
+    "build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "test": "vitest --environment=jsdom",
+    "prepublishOnly": "pnpm run test && pnpm run build"
   },
   "homepage": "https://github.com/dvlden/asb-detect#readme",
   "bugs": "https://github.com/dvlden/asb-detect/issues",
@@ -31,15 +30,16 @@
     "detect"
   ],
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.5.0",
-    "@types/jest": "^29.1.1",
-    "jest": "^29.1.2",
-    "jest-environment-jsdom": "^29.1.2",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.79.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.34.1",
-    "ts-jest": "^29.0.3",
-    "typescript": "^4.8.4"
+    "@dvlden/config": "^0.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "esbuild": "^0.17.4",
+    "jsdom": "^21.1.0",
+    "prettier": "^2.8.3",
+    "rollup": "^3.10.1",
+    "rollup-plugin-dts": "^5.1.1",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4",
+    "vitest": "^0.28.1"
   }
 }

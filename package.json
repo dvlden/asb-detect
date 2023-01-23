@@ -12,8 +12,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup --config rollup.config.ts --configPlugin typescript",
-    "test": "vitest --environment=jsdom",
-    "prepublishOnly": "pnpm run test && pnpm run build"
+    "test": "vitest --environment=jsdom"
   },
   "homepage": "https://github.com/dvlden/asb-detect#readme",
   "bugs": "https://github.com/dvlden/asb-detect/issues",
